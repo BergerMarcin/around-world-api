@@ -2,14 +2,29 @@
   "name": "around-world-api",
   "version": "1.0.0",
   "description": "",
+  "private": true,
+  "type": "module",
   "main": "index.js",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "scripts": {
     "dev": "nodemon src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/"
   },
-  "keywords": ["api", "fastify", "typescript", "around the world", "travel", "holidays"],
+  "keywords": [
+    "around the world",
+    "travel",
+    "holidays",
+    "booking",
+    "api",
+    "fastify",
+    "typescript"
+  ],
   "author": "Marcin Berger marcin.berger@wp.pl",
   "license": "ISC",
   "dependencies": {
@@ -19,7 +34,13 @@
   },
   "devDependencies": {
     "@types/node": "^25.0.9",
+    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "@typescript-eslint/parser": "^8.53.1",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
     "nodemon": "^3.1.11",
+    "prettier": "^3.8.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
