@@ -1,5 +1,7 @@
 import eslintPlugin from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
+import json from '@eslint/json'
+import markdown from '@eslint/markdown'
 import eslintConfigPrettier from 'eslint-config-prettier'
 
 export default [
@@ -54,7 +56,7 @@ export default [
   },
   {
     files: ['**/*.js'],
-    ignores: ['eslint.config.js'],
+    ignores: ['eslint.config.js', 'scripts/**', '**/*.md/*.js'],
     rules: {
       'no-restricted-syntax': [
         'error',
@@ -63,6 +65,23 @@ export default [
           message: 'JavaScript files are not allowed. Use TypeScript instead.',
         },
       ],
+    },
+  },
+  {
+    files: ['**/*.json'],
+    ignores: ['package-lock.json', 'tsconfig.json'],
+    plugins: { json },
+    language: 'json/json',
+    rules: {
+      ...json.configs.recommended.rules,
+    },
+  },
+  {
+    files: ['**/*.md'],
+    plugins: { markdown },
+    processor: markdown.processors.markdown,
+    rules: {
+      ...markdown.configs.recommended.rules,
     },
   },
   eslintConfigPrettier,
