@@ -1,8 +1,10 @@
 {
   "name": "around-world-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Rest API for 'Around World' app",
+  "author": "BergerMarcin <marcin.berger@wp.pl>",
   "private": true,
+  "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "main": "index.js",
   "engines": {
@@ -25,8 +27,6 @@
     "fastify",
     "typescript"
   ],
-  "author": "Marcin Berger marcin.berger@wp.pl",
-  "license": "ISC",
   "dependencies": {
     "fastify": "^5.0.0",
     "fastify-plugin": "^5.0.0",
