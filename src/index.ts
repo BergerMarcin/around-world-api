@@ -21,7 +21,7 @@ fastify.addContentTypeParser(
     done(null, body)
   },
 )
-;(async (): void => {
+;(async (): Promise<void> => {
   try {
     /* NOTE: From here all env variables are already loaded from .env.* files via
              `dotenv-flow` package in ./plugins/env.ts (so here debugInit is available)*/
