@@ -1,6 +1,7 @@
 import Fastify from 'fastify'
+import type { FastifyInstance } from 'fastify'
 
-const fastify = Fastify({
+const fastify: FastifyInstance = Fastify({
   logger: {
     transport: {
       target: 'pino-pretty',

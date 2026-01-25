@@ -1,7 +1,8 @@
 import createDebug from 'debug'
+import type { Debugger } from 'debug'
 
-const debugInit = createDebug('[app initialization]: ')
-const debugHttp = createDebug('[app http]: ')
-const debugDb = createDebug('[app db]: ')
+const debugInit: Debugger = createDebug('[app initialization]: ')
+const debugHttp: Debugger = createDebug('[app http]: ')
+const debugDb: Debugger = createDebug('[app db]: ')
 
 export { debugInit, debugDb, debugHttp }
