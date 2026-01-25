@@ -7,9 +7,18 @@ In the project directory, you can run:
 To start the app in dev mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm start`
+NOTE: Applied `tsx` package for development (handles extensionless .ts imports and maintaining ESM compatibility)
 
-For production mode
+### `npm run build`
+
+To build production code.
+
+NOTE: Changed from native `tsc` to `tsup` as a bundler (in order to skip using file extenstion at import modules as dev hosting needs *.ts and building needs *.js).\
+It bundles everything into a single file.
+
+### `npm run serve`
+
+For production mode of built code.
 
 ### `npm run test`
 

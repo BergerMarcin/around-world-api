@@ -10,15 +10,16 @@
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "strict": true,
-    "module": "NodeNext",
+    "module": "ESNext",
     "target": "ES2024",
     "lib": ["ESNext"],
     "types": ["node"],
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Bundler",
     "moduleDetection": "force",
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "esModuleInterop": true,
+    "noEmit": true,
     "noUncheckedSideEffectImports": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
