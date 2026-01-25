@@ -11,16 +11,17 @@
     "node": "22.21.0"
   },
   "scripts": {
-    "dev": "npm run check-node && DEBUG=* NODE_ENV=development nodemon",
-    "dev-debug": "npm run check-node && DEBUG=* NODE_ENV=development FASTIFY_LOG_LEVEL=debug nodemon",
-    "build": "tsup src/index.ts --format esm --outDir dist --clean",
-    "serve": "npm run check-node && DEBUG=* NODE_ENV=production node dist/index.js",
+    "dev": "npm run node-check && DEBUG=* NODE_ENV=development nodemon",
+    "dev-debug": "npm run node-check && DEBUG=* NODE_ENV=development FASTIFY_LOG_LEVEL=debug nodemon",
+    "build": "run-p node-check ts-check lint && npm run build-only",
+    "build-only": "tsup src/index.ts --format esm --outDir dist --clean",
+    "serve": "npm run node-check && DEBUG=* NODE_ENV=production node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "ts-check": "tsc --noEmit",
     "lint": "eslint",
     "format": "prettier --write src/",
-    "reinstall": "npm run check-node && rm -rf node_modules && rm package-lock.json && npm install",
-    "check-node": "node scripts/check-node-version.js"
+    "reinstall": "npm run node-check && rm -rf node_modules && rm package-lock.json && npm install",
+    "node-check": "node scripts/node-version-check.js"
   },
   "keywords": [
     "around the world",
@@ -49,6 +50,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "nodemon": "^3.1.11",
+    "npm-run-all2": "^8.0.4",
     "prettier": "^3.8.0",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.1",
